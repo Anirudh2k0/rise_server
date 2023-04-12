@@ -1,0 +1,4 @@
+{
+  "dbURL": "mongodb://localhost/tables",
+  "jwtPrivateKey": "tablesjwtprivatekey"
+}
