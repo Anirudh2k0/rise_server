@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import MaterialReactTable from 'material-react-table';
-import { Box, Button, IconButton, Tooltip, Typography } from '@mui/material';
-import { AddCircleRounded, Delete, Edit } from '@mui/icons-material';
+import PropTypes from "prop-types";
+import MaterialReactTable from "material-react-table";
+import { Box, Button, IconButton, Tooltip, Typography } from "@mui/material";
+import { AddCircleRounded, Delete, Edit } from "@mui/icons-material";
 
 function DataGrid(props) {
   const { editButtonEnabled, columns = [], rows = [] } = props;
@@ -28,25 +28,25 @@ export default DataGrid;
 function TableToolbar({
   title,
   addButtonEnabled = false,
-  addButtonLabel = 'Add',
+  addButtonLabel = "Add",
   onAddButtonClick = () => {},
 }) {
   return (
-    <Box display='flex' alignItems='center' gap={2}>
-      <Typography fontWeight='bold' textTransform='uppercase'>
+    <Box display="flex" alignItems="center" gap={2}>
+      <Typography fontWeight="bold" textTransform="uppercase">
         {title}
       </Typography>
-      {addButtonEnabled && (
+      {/* {addButtonEnabled && (
         <Button
-          size='small'
-          variant='contained'
+          size="small"
+          variant="contained"
           endIcon={<AddCircleRounded />}
           onClick={onAddButtonClick}
-          color='info'
+          color="info"
         >
           {addButtonLabel}
         </Button>
-      )}
+      )} */}
     </Box>
   );
 }
@@ -59,21 +59,21 @@ function TableCustomRows({
   onDeleteButtonClick,
 }) {
   return (
-    <Box display='flex' gap='1rem'>
+    <Box display="flex" gap="1rem">
       {editButtonEnabled && (
-        <Tooltip arrow title='Edit'>
-          <IconButton onClick={() => onEditButtonClick(row)} color='primary'>
+        <Tooltip arrow title="Edit">
+          <IconButton onClick={() => onEditButtonClick(row)} color="primary">
             <Edit />
           </IconButton>
         </Tooltip>
       )}
-      {deleteButtonEnabled && (
-        <Tooltip arrow title='Delete'>
-          <IconButton onClick={() => onDeleteButtonClick(row)} color='error'>
+      {/* {deleteButtonEnabled && (
+        <Tooltip arrow title="Delete">
+          <IconButton onClick={() => onDeleteButtonClick(row)} color="error">
             <Delete />
           </IconButton>
         </Tooltip>
-      )}
+      )} */}
     </Box>
   );
 }

@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Box } from '@mui/material';
+import { useState } from "react";
+import { Box } from "@mui/material";
 
-import FormDialog from '@/components/Common/FormDialog';
-import DataGrid from '@/components/DataGrid/DataGrid';
+import FormDialog from "@/components/Common/FormDialog";
+import DataGrid from "@/components/DataGrid/DataGrid";
 
 /**
  * DEFAULT FORM DETAILS PROP STRUCTURE
@@ -72,14 +72,14 @@ function CRUDDataGrid({
       ...prev,
       isEdit: true,
       title: `Edit ${modalTitle}`,
-      helperText: '',
+      helperText: "",
       formData: row.original,
     }));
     setOpen(true);
   };
 
   const handleDelete = (row) => {
-    if (window.confirm('Are you sure to delete')) {
+    if (window.confirm("Are you sure to delete")) {
       deleteQuery(row.original._id);
     }
   };
