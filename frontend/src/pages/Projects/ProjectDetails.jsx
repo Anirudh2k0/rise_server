@@ -13,6 +13,8 @@ import {
   Box,
   Stack,
 } from "@mui/material/";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Link } from "react-router-dom";
 import { img1, img2, img3, img4 } from "@/images";
@@ -63,7 +65,16 @@ const data = [
 const ModalContent = ({ image, handleClose }) => {
   const [precision, setPrecision] = useState(0);
   const handleAnalysisClick = () => {
-    setPrecision(0.72);
+    toast.warn("Please Wait While the Image is being Analyzed", {
+      autoClose: 1500,
+    });
+    toast.success("Analysis Sent !", {
+      position: toast.POSITION.TOP_CENTER,
+      delay: 3000,
+    });
+    setTimeout(() => {
+      setPrecision(0.72);
+    }, 5000);
   };
   return (
     <ModalContentWrapper>
@@ -86,6 +97,7 @@ const ModalContent = ({ image, handleClose }) => {
           <Button onClick={handleAnalysisClick} variant="outlined">
             Send Analysis
           </Button>
+          <ToastContainer />
         </div>
       </div>
     </ModalContentWrapper>
